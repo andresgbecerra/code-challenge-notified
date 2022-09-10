@@ -15,3 +15,8 @@
 
 
 - Bonus #2: Can the caller of the method know if the input string was compressed or if the input string was simply returned as-is without the caller of the method having to perform a calculation of its own?
+
+
+
+> npx webpack --mode production
+> npx webpack --mode development
