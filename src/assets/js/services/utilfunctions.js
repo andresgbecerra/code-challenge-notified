@@ -14,13 +14,13 @@ export const setMessage = (arr, items) => {
 
 
 export const setCompress = (items) => {
-    let charts = [];
+    let chars = [];
     let result;
     let arr = [];
 
     items.forEach((item) => {
-        charts = items.filter(c => c === item);
-        result = charts.length == 1 ? item : item + charts.length;
+        chars = items.filter(c => c === item);
+        result = chars.length == 1 ? item : item + chars.length;
         if (hasNext()) {
             if (current() !== next()) arr.push(result);
         } else {
@@ -38,13 +38,13 @@ export const setCompress = (items) => {
 
 export const setDecompress = (items) => {
 
-    let charts = [];
+    let chars = [];
     let arr = [];
     let factor = 0;
 
     for (let i = 0; i < items.length; i++) {
-        charts = items.filter(c => c === current());
-        if (charts.length > 2) {
+        chars = items.filter(c => c === current());
+        if (chars.length > 2) {
             arr = items;
             break;
         }
