@@ -20,7 +20,7 @@ export const setCompress = (items) => {
 
     items.forEach((item) => {
         chars = items.filter(c => c === item);
-        result = chars.length == 1 ? item : item + chars.length;
+        result = chars.length <= 2 ? item : item + chars.length;
         if (hasNext()) {
             if (current() !== next()) arr.push(result);
         } else {
@@ -55,7 +55,7 @@ export const setDecompress = (items) => {
             }
         } else if ((letters.test(items[i])) && (letters.test(items[i + 1])) && hasNext()) {
             arr.push(items[i]);
-        } else if ((integers.test(items[i])) && (letters.test(items[i + 1])) && hasNext()) {
+        } else if ((integers.test(items[i])) && (letters.test(items[i + 1])) && hasNext() && factor != Number(items[i])) {
             arr.push(items[i]);
         } else if ((integers.test(items[i])) && (integers.test(items[i + 1])) && hasNext() && factor != Number(items[i])) {
             factor = Number(items[i + 1]);
